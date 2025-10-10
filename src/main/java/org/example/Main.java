@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.model.Dijkstra;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -37,6 +39,16 @@ public class Main {
         BellmanFord.bellmanFord(arestas, vertices, 0);
         System.out.println();
 
-        //D
+        //Dijkstra
+        System.out.println("====DIJKSTRA====");
+        int origemDijkstra=0;
+        int [][] grafoDijkstra = {
+                {0, 10, 0, 30, 100},
+                {10, 0, 50, 0, 0},
+                {0, 50, 0, 20, 10},
+                {30, 0, 20, 0, 60},
+                {100, 0, 10, 60, 0}
+        };
+        Dijkstra.dijkstra(grafoDijkstra, origemDijkstra);
     }
 }
