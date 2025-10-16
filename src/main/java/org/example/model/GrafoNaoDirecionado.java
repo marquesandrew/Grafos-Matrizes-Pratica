@@ -3,12 +3,12 @@ package org.example.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Grafo {
+public class GrafoNaoDirecionado {
     int numeroVertices;
     int [][] matrizAdjacencia;
     List<Aresta> arestas;
 
-    public Grafo(int numeroVertices){
+    public GrafoNaoDirecionado(int numeroVertices){
         this.numeroVertices = numeroVertices;
         matrizAdjacencia = new int[numeroVertices][numeroVertices];
         arestas = new ArrayList<>();
@@ -22,7 +22,8 @@ public class Grafo {
     }
     public void addAresta(int vOrigem, int vDestino, int peso){
         matrizAdjacencia[vOrigem][vDestino] = peso;
-        arestas.add(new Aresta(vOrigem,vDestino,peso));
+        matrizAdjacencia[vDestino][vOrigem] = peso;
+        arestas.add(new Aresta(vOrigem, vDestino, peso));
     }
 
     static class Aresta{

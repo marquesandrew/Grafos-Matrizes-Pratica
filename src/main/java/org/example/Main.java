@@ -1,7 +1,26 @@
 package org.example;
 
+import org.example.model.Grafo;
+import org.example.model.GrafoNaoDirecionado;
+
 public class Main {
     public static void main(String[] args) {
+
+        //PRIM
+        System.out.println("====PRIM====");
+        GrafoNaoDirecionado g = new GrafoNaoDirecionado(5);
+
+        g.addAresta(0, 1, 2);
+        g.addAresta(0, 2, 3);
+        g.addAresta(1, 2, 1);
+        g.addAresta(1, 3, 4);
+        g.addAresta(2, 3, 5);
+        g.addAresta(2, 4, 6);
+        g.addAresta(3, 4, 7);
+
+        Prim.encontrarMST(g);
+
+
 
         // FLOYD WARSHALL
         System.out.println("====FLOYD WARSHALL====");
