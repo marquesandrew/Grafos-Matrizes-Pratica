@@ -57,6 +57,6 @@ public class Prim {
             System.out.println(pai[i] + " - " + i + "\t" + matriz[i][pai[i]]);
             custoTotal += matriz[i][pai[i]];
         }
-        System.out.println("\nCusto Total: " + custoTotal);
+        System.out.printf("\nCusto Total: %.2f\n", custoTotal);
     }
 }

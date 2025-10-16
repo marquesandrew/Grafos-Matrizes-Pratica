@@ -24,6 +24,11 @@ public class Main {
 
         Prim.encontrarMST(grafoPrim);
 
+        //KRUSKAL
+        System.out.println("====KRUSKAL====");
+        Kruskal.encontrarMST(grafoPrim);
+
+
 
 
         // FLOYD WARSHALL

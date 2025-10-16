@@ -26,7 +26,7 @@ public class GrafoNaoDirecionado {
         arestas.add(new Aresta(vOrigem, vDestino, peso));
     }
 
-    static class Aresta{
+    public static class Aresta{
         int vOrigem, vDestino;
         double peso;
         Aresta(int vOrigem, int vDestino, double peso){
@@ -34,8 +34,19 @@ public class GrafoNaoDirecionado {
             this.vDestino = vDestino;
             this.peso = peso;
         }
-    }
 
+        public double getPeso(){
+            return peso;
+        }
+
+        public int getOrigem(){
+            return vOrigem;
+        }
+
+        public int getDestino(){
+            return vDestino;
+        }
+    }
 
     public int getNumeroVertices(){
         return numeroVertices;
@@ -45,7 +56,9 @@ public class GrafoNaoDirecionado {
         return matrizAdjacencia;
     }
 
-    public double getPeso(){
-        return peso;
+
+    public List<Aresta> getArestas(){
+        return arestas;
     }
+
 }
