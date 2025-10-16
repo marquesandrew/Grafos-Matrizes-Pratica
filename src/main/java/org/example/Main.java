@@ -8,17 +8,21 @@ public class Main {
 
         //PRIM
         System.out.println("====PRIM====");
-        GrafoNaoDirecionado g = new GrafoNaoDirecionado(5);
+        GrafoNaoDirecionado grafoPrim = new GrafoNaoDirecionado(6);
 
-        g.addAresta(0, 1, 2);
-        g.addAresta(0, 2, 3);
-        g.addAresta(1, 2, 1);
-        g.addAresta(1, 3, 4);
-        g.addAresta(2, 3, 5);
-        g.addAresta(2, 4, 6);
-        g.addAresta(3, 4, 7);
+        grafoPrim.addAresta(0, 1, 1.0);
+        grafoPrim.addAresta(0, 2, 5.0);
+        grafoPrim.addAresta(0, 3, 5.3);
+        grafoPrim.addAresta(1, 2, 0.3);
+        grafoPrim.addAresta(1, 4, 1.9);
+        grafoPrim.addAresta(2, 3, 0.5);
+        grafoPrim.addAresta(2, 4, 0.3);
+        grafoPrim.addAresta(2, 5, 9.1);
+        grafoPrim.addAresta(4, 5, 1.3);
+        grafoPrim.addAresta(3, 5, 5.0);
 
-        Prim.encontrarMST(g);
+
+        Prim.encontrarMST(grafoPrim);
 
 
 
