@@ -6,29 +6,25 @@ import org.example.model.GrafoNaoDirecionado;
 public class Main {
     public static void main(String[] args) {
 
+        GrafoNaoDirecionado grafoNaoDirecionado = new GrafoNaoDirecionado(6);
+        grafoNaoDirecionado.addAresta(0, 1, 1.0);
+        grafoNaoDirecionado.addAresta(0, 2, 5.0);
+        grafoNaoDirecionado.addAresta(0, 3, 5.3);
+        grafoNaoDirecionado.addAresta(1, 2, 0.3);
+        grafoNaoDirecionado.addAresta(1, 4, 1.9);
+        grafoNaoDirecionado.addAresta(2, 3, 0.5);
+        grafoNaoDirecionado.addAresta(2, 4, 0.3);
+        grafoNaoDirecionado.addAresta(2, 5, 9.1);
+        grafoNaoDirecionado.addAresta(4, 5, 1.3);
+        grafoNaoDirecionado.addAresta(3, 5, 5.0);
+
         //PRIM
         System.out.println("====PRIM====");
-        GrafoNaoDirecionado grafoPrim = new GrafoNaoDirecionado(6);
-
-        grafoPrim.addAresta(0, 1, 1.0);
-        grafoPrim.addAresta(0, 2, 5.0);
-        grafoPrim.addAresta(0, 3, 5.3);
-        grafoPrim.addAresta(1, 2, 0.3);
-        grafoPrim.addAresta(1, 4, 1.9);
-        grafoPrim.addAresta(2, 3, 0.5);
-        grafoPrim.addAresta(2, 4, 0.3);
-        grafoPrim.addAresta(2, 5, 9.1);
-        grafoPrim.addAresta(4, 5, 1.3);
-        grafoPrim.addAresta(3, 5, 5.0);
-
-
-        Prim.encontrarMST(grafoPrim);
+        Prim.encontrarMST(grafoNaoDirecionado);
 
         //KRUSKAL
         System.out.println("====KRUSKAL====");
-        Kruskal.encontrarMST(grafoPrim);
-
-
+        Kruskal.encontrarMST(grafoNaoDirecionado);
 
 
         // FLOYD WARSHALL
