@@ -1,6 +1,6 @@
 package org.example;
 
-import org.example.model.GrafoNaoDirecionado;
+import org.example.model.Grafo;
 
 import java.util.Arrays;
 
@@ -8,7 +8,7 @@ public class Prim {
 
     private static final double INF = Double.POSITIVE_INFINITY / 2;
 
-    public static void encontrarMST(GrafoNaoDirecionado grafo) {
+    public static void encontrarMST(Grafo grafo) {
         int numeroVertices = grafo.getNumeroVertices();
         double[][] matriz = grafo.getMatrizAdjacencia();
 
@@ -57,6 +57,6 @@ public class Prim {
             System.out.println(pai[i] + " - " + i + "\t" + matriz[i][pai[i]]);
             custoTotal += matriz[i][pai[i]];
         }
-        System.out.printf("\nCusto Total: %.2f\n", custoTotal);
+        System.out.printf("\nCusto Total: %.2f\n\n", custoTotal);
     }
 }

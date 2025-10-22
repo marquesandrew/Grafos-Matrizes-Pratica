@@ -1,13 +1,13 @@
 package org.example;
 
-import org.example.model.GrafoNaoDirecionado;
+import org.example.model.Aresta;
+import org.example.model.Grafo;
 
 import java.util.Comparator;
 import java.util.List;
 import java.util.ArrayList;
 
 public class Kruskal {
-
     //classe auxiliar Union-Find
     static class SubConjunto {
         int pai, rank;
@@ -36,12 +36,12 @@ public class Kruskal {
     }
 
     //kruskal
-    public static void encontrarMST(GrafoNaoDirecionado grafo) {
-        List<GrafoNaoDirecionado.Aresta> arestas = new ArrayList<>(grafo.getArestas());
+    public static void encontrarMST(Grafo grafo) {
+        List<Aresta> arestas = new ArrayList<>(grafo.getArestas());
         int numeroVertices = grafo.getNumeroVertices();
 
         //Ordena arestas por peso menor -> maior
-        arestas.sort(Comparator.comparingDouble(GrafoNaoDirecionado.Aresta::getPeso));
+        arestas.sort(Comparator.comparingDouble(Aresta::getPeso));
 
         //cria subconjuntos
         SubConjunto[] subConjuntos = new SubConjunto[numeroVertices];
@@ -51,11 +51,11 @@ public class Kruskal {
             subConjuntos[i].rank = 0;
         }
 
-        List<GrafoNaoDirecionado.Aresta> resultado = new ArrayList<>();
+        List<Aresta> resultado = new ArrayList<>();
         double custoTotal = 0.0;
 
         //Itera sobre arestas ordenadas
-        for (GrafoNaoDirecionado.Aresta aresta : arestas) {
+        for (Aresta aresta : arestas) {
             int x = find(subConjuntos, aresta.getOrigem());
             int y = find(subConjuntos, aresta.getDestino());
 
@@ -74,9 +74,9 @@ public class Kruskal {
         //imprime resultado
         System.out.println("Arestas MST Kruskal");
         System.out.println("Aresta\tPeso");
-        for (GrafoNaoDirecionado.Aresta aresta: resultado){
+        for (Aresta aresta: resultado){
             System.out.printf("%d - %d\t%.2f%n", aresta.getOrigem(), aresta.getDestino(), aresta.getPeso());
         }
-        System.out.printf("\nCusto Total: %.2f%n", custoTotal);
+        System.out.printf("\nCusto Total: %.2f%n\n", custoTotal);
     }
 }
